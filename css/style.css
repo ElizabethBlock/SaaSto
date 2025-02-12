@@ -171,8 +171,14 @@
     justify-content: space-between;
     align-items: center;
 
+    position: relative;
+
  }
 
+ .user {
+   position: relative;
+ }
+ 
  .number__user-nb {
    width: 120px;
    height: 100px;
@@ -182,6 +188,16 @@
     text-align: center;
     transition: 1s;
     cursor: pointer;
+
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
  }
 
  .number__user-nb:hover {
@@ -193,6 +209,11 @@
    text-align: center;
     color: #404040;
     margin: 0;
+
+   font-family: 'Poppins-Regular';
+   font-size: 20px;
+   position: relative;
+   z-index: 0;
  }
 
  .block-text {
