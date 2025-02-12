@@ -64,7 +64,7 @@
  }
 
  .menu__list-link {
-    padding: 0 48px 0 20px;
+    padding: 10px 48px 10px 20px;
     line-height: 1.3;
  }
 
@@ -79,7 +79,7 @@
     text-decoration: underline;
  }
 
- .sing-item {
+ /* .sing-item {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,7 +106,64 @@
  .a-sign:hover {
     font-size: 22px;
     color: #FF553E;
+ } */
+
+ .first-btn {
+   background-color: #FF553E;
+   border: #FF553E 3px solid;
+   width: 133px;
+   height: 60px;
+   border-radius: 40px;
+   transition: .5s;
+   color: #FFF8F2;
+   text-align: center;
+   padding: 0;
+   font-family: 'Poppins-Medium';
+   padding: 0;
  }
+
+ .first-btn:hover {
+   color: #FF553E;
+   background-color: #FFF8F2;
+   border: #FF553E 3px solid;
+   font-size: 17px;
+ }
+
+ .a-sign {
+   padding: 0;
+ }
+
+ /* .a-sign {
+   display: inline-block;
+   width: 110px;
+   padding: 0;
+   margin: 0;
+   font-size: 20px;
+   transition: .5s;
+ }
+
+ .a-sign:hover {
+   font-size: 17px;
+
+ } */
+
+ /* .btn {
+    width: 250px;
+    height: 80px;
+    border-radius: 40px;
+    background-color: #FF553E;
+    border: 1px solid #FF553E;
+    color: #FFF8F2;
+    font-family: 'Poppins-Medium';
+    transition: .6s;
+ }
+
+ .btn:hover {
+    background-color: #fef8f2;
+    font-size: 17px;
+    color: #FF553E;
+ } */
+
 
  .content {
     height: 660px;
@@ -136,25 +193,21 @@
     margin: 0 0 68px 0;
  }
 
- .top__a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Poppins-Medium';
-    width: 240px;
-    height: 76px;
-    background-color: #FF553E;
-    color: #FFF8F2;
+ .btn {
+    width: 250px;
+    height: 80px;
     border-radius: 40px;
-    border: #FF553E 1px solid;
-    transition: .7s;
+    background-color: #FF553E;
+    border: 1px solid #FF553E;
+    color: #FFF8F2;
+    font-family: 'Poppins-Medium';
+    transition: .6s;
  }
 
- .top__a:hover {
+ .btn:hover {
     background-color: #fef8f2;
-    font-size: 20px;
+    font-size: 17px;
     color: #FF553E;
-    border: #FF553E 1px solid;
  }
 
  .features {
@@ -176,17 +229,17 @@
  }
 
  .user {
-   position: relative;
+    position: relative;
  }
- 
+
  .number__user-nb {
-   width: 120px;
-   height: 100px;
+    width: 140px;
+    height: 111px;
     font-family: 'Poppins-SemiBold';
     font-size: 48px;
     margin: 0;
     text-align: center;
-    transition: 1s;
+    transition: transform 1s ease, color 0.3s ease; /* Додано плавне повернення */
     cursor: pointer;
 
     position: relative;
@@ -200,20 +253,25 @@
     z-index: 1;
  }
 
- .number__user-nb:hover {
-   color: #FF553E;
-   transform: rotate3d(1, 1, 1, 360deg);
- }
+ .number__user-nb.rotated {
+   transform: rotate3d(1, 1, 1, 360deg); /* Обертання при застосуванні класу */
+   color: #FF553E; /* Змінюємо колір при ротації */
+}
+
+ /* .number__user-nb:hover {
+    color: #FF553E;
+    transform: rotate3d(1, 1, 1, 360deg);
+ } */
 
  .number__user-text {
-   text-align: center;
+    text-align: center;
     color: #404040;
     margin: 0;
 
-   font-family: 'Poppins-Regular';
-   font-size: 20px;
-   position: relative;
-   z-index: 0;
+    font-family: 'Poppins-Regular';
+    font-size: 20px;
+    position: relative;
+    z-index: 0;
  }
 
  .block-text {
