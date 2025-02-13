@@ -5,13 +5,8 @@
     color: #1C0E0D;
     margin: 0;
     padding: 0;
- }
-
- .backgroung-img {
-    margin: 0 auto;
-    background-image: url(../images/Group.png);
-    background-repeat: no-repeat;
-    background-position: 30% -215%;
+    height: 10000px;
+    /* потім видалити */
  }
 
  ul {
@@ -23,7 +18,6 @@
  a {
     text-decoration: none;
     color: inherit;
-    /* cursor: pointer; */
  }
 
  .container {
@@ -48,11 +42,11 @@
  }
 
  .logo-img {
-   transition: 1.2s;
+    transition: 1.2s;
  }
 
  .logo-img:hover {
-   transform: rotateY(180deg) translateY(25px);
+    transform: rotateY(180deg) translateY(25px);
 
  }
 
@@ -86,11 +80,11 @@
  }
 
  .hov:hover .menu__list-link {
-   transform: translateY(-10px);
-   color: #FF553E;
-   text-decoration: underline;
-   z-index: 0;
-}
+    transform: translateY(-10px);
+    color: #FF553E;
+    text-decoration: underline;
+    z-index: 0;
+ }
 
  .log {
     color: #FF553E;
@@ -119,7 +113,7 @@
  }
 
  .first-btn:hover {
-   font-family: 'Poppins-Regular';
+    font-family: 'Poppins-Regular';
     color: #FF553E;
     background-color: #FFF8F2;
     border: #FF553E 3px solid;
@@ -128,6 +122,14 @@
 
  .a-sign {
     padding: 0;
+ }
+
+ .backgroung-img {
+    background-image: url(../images/Group5.svg);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: auto;
+    position: relative;
  }
 
  .content {
@@ -177,8 +179,8 @@
  }
 
  .features {
-    height: 700px;
-    background-image: url(../images/Group2.png);
+    /* height: 700px; */
+    background-image: url(../images/BC.png);
  }
 
  .block-number {
@@ -234,10 +236,32 @@
  }
 
  .features-text {
-    font-family: 'Poppins-SemiBold';
-    font-size: 48px;
-    color: #18063c;
- }
+   font-size: 48px;
+   font-family: 'Poppins-SemiBold';
+   color: black;
+   position: relative;
+   display: inline-block;
+   background: none;
+}
+
+.features-text::before {
+   content: attr(data-text);
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   color: inherit;
+   background: rgba(255, 255, 255, 0.2); /* Напівпрозорий білий фон */
+   backdrop-filter: blur(10px); /* Розмиття */
+   clip-path: circle(0px at var(--x) var(--y)); /* Початковий стан (невидимий) */
+   transition: clip-path 0.2s ease-out;
+}
+
+.features-text:hover::before {
+   clip-path: circle(50px at var(--x) var(--y)); /* Видима зона розмиття */
+}
+
 
  .pre-text {
     text-align: center;
@@ -268,11 +292,11 @@
  }
 
  .block-img {
-   transition: .7s;
+    transition: .7s;
  }
 
  .block-img:hover {
-   transform: rotateY(180deg);
+    transform: rotateY(180deg);
  }
 
  .one {
