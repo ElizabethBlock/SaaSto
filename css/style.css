@@ -267,6 +267,14 @@
     margin: 32px 0 20px 28px;
  }
 
+ .block-img {
+   transition: .7s;
+ }
+
+ .block-img:hover {
+   transform: rotateY(180deg);
+ }
+
  .one {
     background-color: #70D0DC;
  }
