@@ -1,30 +1,20 @@
-// window.addEventListener('load', function() {
-//     const background = document.querySelector('.backgroung-img');
-//     const scrollPosition = window.scrollY; 
-//     background.style.backgroundPosition = `10% ${270 + scrollPosition * 0.5}px`; 
-// });
+if (typeof numberUserNbElements === 'undefined') {
+    const numberUserNbElements = document.querySelectorAll('.number__user-nb');
 
-// window.addEventListener('scroll', function() {
-//     const background = document.querySelector('.backgroung-img');
-//     const scrollPosition = window.scrollY; 
-//     background.style.backgroundPosition = `10% ${270 + scrollPosition * 0.5}px`; 
-// });
+    numberUserNbElements.forEach(function(numberUserNb) {
+        numberUserNb.parentElement.addEventListener('mouseenter', () => {
+            console.log('mouseenter triggered');
+            numberUserNb.style.transform = 'rotate3d(1, 1, 1, 360deg)';
+            numberUserNb.style.color = '#FF553E';
+        });
 
-
-const numberUserNbElements = document.querySelectorAll('.number__user-nb');
-
-numberUserNbElements.forEach(function(numberUserNb) {
-    numberUserNb.parentElement.addEventListener('mouseenter', () => {
-        numberUserNb.style.transform = 'rotate3d(1, 1, 1, 360deg)';
-        numberUserNb.style.color = '#FF553E';
+        numberUserNb.parentElement.addEventListener('mouseleave', () => {
+            console.log('mouseleave triggered');
+            numberUserNb.style.transform = 'rotate3d(1, 1, 1, 0deg)';
+            numberUserNb.style.color = '';
+        });
     });
-
-    numberUserNb.parentElement.addEventListener('mouseleave', () => {
-        numberUserNb.style.transform = 'rotate3d(1, 1, 1, 0deg)';
-        numberUserNb.style.color = '';
-    });
-});
-
+}
 
 window.addEventListener("scroll", function () {
     let scrollPos = window.scrollY;
@@ -38,4 +28,22 @@ window.addEventListener("scroll", function () {
 });
 
 
+window.addEventListener("scroll", function () {
+    let scrollPos = window.scrollY;
+    let blockNumber = document.querySelector(".block-number");
+    let blockText = document.querySelector(".block-text");
+    let line = document.querySelector(".expanding-line");
 
+    let blockNumberBottom = blockNumber.offsetTop + blockNumber.offsetHeight;
+    let blockTextTop = blockText.offsetTop;
+    let maxWidth = window.innerWidth * 0.8;
+
+    let lineRect = line.getBoundingClientRect();
+    
+    if (lineRect.top <= window.innerHeight && lineRect.bottom >= 0) {
+        if (scrollPos > blockNumberBottom - window.innerHeight) {
+            let newWidth = Math.min((scrollPos - (blockNumberBottom - window.innerHeight)) * 2, maxWidth);
+            line.style.width = newWidth + "px";
+        }
+    }
+});
