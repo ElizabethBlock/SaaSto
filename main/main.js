@@ -30,6 +30,15 @@ window.addEventListener("scroll", function () {
 
 window.addEventListener("scroll", function () {
     let scrollPos = window.scrollY;
+
+    document.querySelector(".im3").style.transform = `translateY(${scrollPos * 0.3}px) rotate(${scrollPos * 0.2}deg)`;
+    document.querySelector(".im2").style.transform = `translate(${scrollPos * 0.3}px, ${scrollPos * -0.1}px) rotate(${scrollPos * 0.03}deg)`;
+});
+
+
+
+window.addEventListener("scroll", function () {
+    let scrollPos = window.scrollY;
     let blockNumber = document.querySelector(".block-number");
     let blockText = document.querySelector(".block-text");
     let line = document.querySelector(".expanding-line");
