@@ -16,16 +16,16 @@ if (typeof numberUserNbElements === 'undefined') {
     });
 }
 
-// window.addEventListener("scroll", function () {
-//     let scrollPos = window.scrollY;
+window.addEventListener("scroll", function () {
+    let scrollPos = window.scrollY;
 
-//     document.querySelector(".item1").style.transform = `translateY(${scrollPos * 0.3}px)`;
-//     document.querySelector(".item2").style.transform = `translateY(-${scrollPos * 0.2}px)`;
-//     document.querySelector(".item3").style.transform = `translateY(${scrollPos * 0.4}px)`;
-//     document.querySelector(".item5").style.transform = `translateY(${scrollPos * 0.4}px)`;
-//     document.querySelector(".item6").style.transform = `translateY(${scrollPos * 0.2}px) rotate(${scrollPos * 0.1}deg)`;
-//     document.querySelector(".item8").style.transform = `translateY(${scrollPos * 0.4}px)`;
-// });
+    document.querySelector(".item1").style.transform = `translateY(${scrollPos * 0.3}px)`;
+    document.querySelector(".item2").style.transform = `translateY(-${scrollPos * 0.2}px)`;
+    document.querySelector(".item3").style.transform = `translateY(${scrollPos * 0.4}px)`;
+    document.querySelector(".item5").style.transform = `translateY(${scrollPos * 0.4}px)`;
+    document.querySelector(".item6").style.transform = `translateY(${scrollPos * 0.2}px) rotate(${scrollPos * 0.1}deg)`;
+    document.querySelector(".item8").style.transform = `translateY(${scrollPos * 0.4}px)`;
+});
 
 
 window.addEventListener("scroll", function () {
