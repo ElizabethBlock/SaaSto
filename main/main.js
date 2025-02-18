@@ -56,3 +56,16 @@ window.addEventListener("scroll", function () {
         }
     }
 });
+
+
+
+window.addEventListener("scroll", function () {
+    let scrollPos = window.scrollY;
+
+    document.querySelector(".item15").style.transform = `translate(${scrollPos * 0.05}px, -${scrollPos * 0.05}px) rotate(-${scrollPos * 0.03}deg)`;
+    document.querySelector(".img11").style.transform = `translate(-${scrollPos * 0.05}px, ${scrollPos * 0.05}px)`;
+    document.querySelector(".item12").style.transform = `translate(${scrollPos * 0.05}px, -${scrollPos * 0.05}px)`;
+    document.querySelector(".item13").style.transform = `translate(${scrollPos * 0.1}px, ${scrollPos * 0.06}px)`;
+
+
+});
