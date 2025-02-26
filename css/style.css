@@ -553,19 +553,20 @@
     position: relative;
  }
 
- .im__3d, .im__3d2 {
-   position: absolute;
-   z-index: 0;
+ .im__3d,
+ .im__3d2 {
+    position: absolute;
+    z-index: 0;
  }
 
  .im__3d {
-   top: -3%;
-   left: 83.3%;
+    top: -3%;
+    left: 83.3%;
  }
 
  .im__3d2 {
-   top: 35%;
-   left: 0;
+    top: 35%;
+    left: 0;
  }
 
  .block__tracker-cont {
@@ -600,11 +601,11 @@
  }
 
  .tracker__block-tabl {
-   display: flex;
+    display: flex;
  }
 
  .block__magna {
-   position: relative;
+    position: relative;
     width: 708px;
     display: flex;
     flex-direction: column;
@@ -619,7 +620,7 @@
  }
 
  .block__expenses {
-   justify-content: flex-end;
+    justify-content: flex-end;
  }
 
  .block__im-cl,
@@ -677,65 +678,169 @@
     margin: 0;
  }
 
- .vector__img, .vector__img-after {
-   width: 90px;
-   height: 125px;
+ .vector__img,
+ .vector__img-after {
+    width: 90px;
+    height: 125px;
  }
 
  .vector__img {
-   position: absolute;
-   left: 73%;
-   top: 12%;
+    position: absolute;
+    left: 73%;
+    top: 12%;
  }
 
  .vector__img-after {
-   position: absolute;
-   left: -7%;
-   top: 47%;
+    position: absolute;
+    left: -7%;
+    top: 47%;
  }
 
  .block__statistics {
-   width: 690px;
-   height: 620px;
-   position: relative;
+    width: 690px;
+    height: 620px;
+    position: relative;
  }
 
  .Stat1 {
-   border-radius: 28px;
-   position: absolute;
-   top: -7%;
-   left: 15%;
-   box-shadow: 17px 17px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 28px;
+    position: absolute;
+    top: -7%;
+    left: 15%;
+    box-shadow: 17px 17px 20px rgba(0, 0, 0, 0.3);
  }
 
  .Stat2 {
-   border-radius: 28px;
-   position: absolute;
-   top: 12%;
-   left: 65%;
-   box-shadow: 17px 17px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 28px;
+    position: absolute;
+    top: 12%;
+    left: 65%;
+    box-shadow: 17px 17px 20px rgba(0, 0, 0, 0.3);
  }
 
  .Stat3 {
-   border-radius: 28px;
-   position: absolute;
-   top: 43%;
-   left: 20%;
-   box-shadow: 17px 17px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 28px;
+    position: absolute;
+    top: 43%;
+    left: 20%;
+    box-shadow: 17px 17px 20px rgba(0, 0, 0, 0.3);
  }
 
  .hover-area {
-     position: absolute;
-     top: -30px;
-     left: -30px;
-     width: 176px;
-     height: 176px;
-     background: rgba(255, 0, 0, 0);
-     cursor: pointer;
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 176px;
+    height: 176px;
+    background: rgba(255, 0, 0, 0);
+    cursor: pointer;
  }
- 
+
  .bounce {
-     transition: transform 0.6s ease-out;
-     position: relative;
+    transition: transform 0.6s ease-out;
+    position: relative;
  }
- 
+
+
+ .flexible {
+    width: 1220px;
+    margin: 0 auto;
+ }
+
+ .block__flexible-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 140px;
+ }
+
+ .flexible__text {
+    font-family: 'Poppins-SemiBold';
+    font-size: 48px;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+ }
+
+ .flexible__img {
+    top: 96%;
+    left: 57%;
+    position: absolute;
+    z-index: -1;
+ }
+
+ .flexible__text-after {
+    margin: 0;
+    color: #726d6d;
+ }
+
+ .block__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+    margin-top: 50px;
+
+ }
+
+ .switch {
+    display: inline-block;
+    position: relative;
+    width: 84px;
+    height: 40px;
+ }
+
+ .switch input {
+    opacity: 1;
+    width: 0;
+    height: 0;
+ }
+
+ .move {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #FF553E;
+    border-color: rgba(255, 85, 62, 0.2);
+    border-radius: 24px;
+    transition: 0.4s;
+    cursor: pointer;
+    box-shadow: 5px 4px 3px rgb(234 108 108 / 50%);
+ }
+
+ .move::before {
+    position: absolute;
+    content: '';
+    background-color: rgb(243 209 204);
+    width: 30px;
+    height: 30px;
+    border-radius: 40px;
+    top: 3px;
+    bottom: 0;
+    left: 4px;
+    box-shadow: inset 4px 4px 6px #b44141;
+    transition: 0.6s;
+ }
+
+ input:checked+.move {
+    background-color: rgba(255, 85, 62, 0.2);
+    border: 1px solid transparent;
+    box-shadow: -5px 4px 3px rgb(234 108 108 / 68%);
+
+ }
+
+ input:checked+.move::before {
+    background-color: #FF553E;
+    transform: translateX(44px);
+    box-shadow: inset -2px 5px 7px #400f0f;
+ }
+
+ .monthly,
+ .yearly {
+    font-family: 'Poppins-SemiBold';
+    font-size: 24px;
+ }
