@@ -125,3 +125,27 @@ window.addEventListener("scroll", function () {
     animateOnScroll(".Stat2", (scroll) => `translate(${scroll * 0.03}px, -${scroll * 0.05}px)`);
     animateOnScroll(".Stat3", (scroll) => `translate(-${scroll * 0.01}px, ${scroll * 0.03}px)`);
 });
+
+
+document.querySelectorAll(".hover-area").forEach(area => {
+    let bounce = area.nextElementSibling; // Знаходимо відповідний .bounce
+
+    area.addEventListener("mouseenter", (event) => {
+        let rect = area.getBoundingClientRect();
+        let mouseX = event.clientX;
+        let mouseY = event.clientY;
+        let centerX = rect.left + rect.width / 2;
+        let centerY = rect.top + rect.height / 2;
+
+        // Розрахунок зміщення
+        let offsetX = (mouseX - centerX) > 0 ? -16 : 16; // Визначаємо зміщення по X
+        let offsetY = (mouseY - centerY) > 0 ? -16 : 16; // Визначаємо зміщення по Y
+
+        // Зміщення по обох осях (X і Y) для відскоку
+        bounce.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+    });
+
+    area.addEventListener("mouseleave", () => {
+        bounce.style.transform = "translate(0, 0)"; // Повертаємо в початкове положення
+    });
+});
