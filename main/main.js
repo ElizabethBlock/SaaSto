@@ -149,3 +149,33 @@ document.querySelectorAll(".hover-area").forEach(area => {
         bounce.style.transform = "translate(0, 0)"; // Повертаємо в початкове положення
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+document.querySelector('.switch input').addEventListener('change', function() {
+    const isChecked = this.checked;
+
+    const freeBlock = document.querySelector('.free__block');
+    const premiumBlock = document.querySelector('.premium__block');
+
+    // Спочатку очищаємо класи для карток
+    freeBlock.classList.remove('white-background', 'red-background');
+    premiumBlock.classList.remove('white-background', 'red-background');
+
+    // Якщо перемикач увімкнений для Yearly, змінюємо класи
+    if (isChecked) {
+        freeBlock.classList.add('red-background');  // Зробимо Free червоною
+        premiumBlock.classList.add('white-background');  // Зробимо Premium білою
+    } else {
+        freeBlock.classList.add('white-background');  // Зробимо Free білою
+        premiumBlock.classList.add('red-background');  // Зробимо Premium червоною
+    }
+});
